@@ -14,9 +14,10 @@ const routes: Routes = [
       {
         path: 'pages',
         component: LayoutfullComponent,
-        loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule),
+        loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule), 
       }
     ]
+    
   }
 ];
 
