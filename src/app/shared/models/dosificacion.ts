@@ -8,3 +8,4 @@ export class Dosificacion {
       Object.assign(this, partial);
     }
 }
+  
