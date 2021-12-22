@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { InventarioRoutingModule } from './inventario-routing.module';
 import { DosificacionComponent } from './components/dosificacion/dosificacion.component';
-import {SharedModule} from '../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module'
 
 @NgModule({
   declarations: [

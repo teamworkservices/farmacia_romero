@@ -18,7 +18,10 @@ export class DosificacionComponent implements OnInit {
   ];
 
   dataSource!: MatTableDataSource<Dosificacion>
-  constructor() { }
+  
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Dosificacion>([]);
