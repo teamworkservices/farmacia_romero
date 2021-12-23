@@ -29,5 +29,15 @@ export class DosificacionService {
     this.dosificacionData.push(dosificacion);
     return dosificacion;
   }
+
+  editarDosificacion(dosificacion: Dosificacion):Dosificacion{
+    let indexDosificacion = this.dosificacionData.findIndex(item => item.id == dosificacion.id);
+    Object.assign(this.dosificacionData[indexDosificacion], dosificacion);
+    return dosificacion;
+  }
+
+  eliminarDosificacion(id:number){
+    this.dosificacionData = this.dosificacionData.filter(item => item.id != id);
+  }
   
 }
