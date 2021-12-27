@@ -1,13 +1,17 @@
 <div>
     <mat-toolbar>
       <span class="green">Inicio/</span>
-      <span>Dosificación</span>
+      <span>Laboratorio</span>
     </mat-toolbar>
 </div>
 
 
 <mat-toolbar>
-  <button (click)="openCreateDialog()" mat-raised-button>
+  <!-- <button (click)="openCreateDialog()" mat-raised-button>
+    <mat-icon>add_circle_outline</mat-icon>
+    AGREGAR
+  </button> -->
+  <button mat-raised-button>
     <mat-icon>add_circle_outline</mat-icon>
     AGREGAR
   </button>
@@ -33,12 +37,6 @@
     <ng-container matColumnDef="acciones">
       <th *matHeaderCellDef id="acciones" mat-header-cell>ACCIÓN</th>
       <td *matCellDef="let element;" mat-cell>
-        <a (click)="openEditDialog(element)" class="green" matTooltip="Editar">
-          <mat-icon class="mat-icon-green">edit</mat-icon>
-        </a>
-        <a (click)="eliminarDosificacion(element)" class="green margin-l" matTooltip="Eliminar">
-          <mat-icon class="mat-icon-green">delete_forever</mat-icon>
-        </a>
       </td>
     </ng-container>
 
