@@ -71,6 +71,7 @@ export class EditarMedicamentoComponent implements OnInit {
 	editarMedicamento() {
 		if (this.form.valid) {
 			let medicamento = new Medicamento();
+			medicamento.id = this.data.id;
 			medicamento.codigoCompra = this.form.value["codigoCompraCtrl"];
 			medicamento.codigoBarra = this.form.value["codigoBarraCtrl"];
 			medicamento.cantidad = this.form.value["cantidadCtrl"];

@@ -41,7 +41,7 @@ export class MedicamentoService {
 			codigoCompra: "7987",
 			codigoBarra: "45gfdtd",
 			nombre: "Ranitidina",
-			cantidad: 120,
+			cantidad: 18,
 			precio: 250,
 			laboratorio: { id: 3, nombre: "Optica", codigo: "648" },
 			dosificacion: {
