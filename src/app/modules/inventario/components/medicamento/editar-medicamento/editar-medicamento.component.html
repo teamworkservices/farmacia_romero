@@ -1,0 +1,94 @@
+<form [formGroup]="form" (ngSubmit)="editarMedicamento()">
+
+    <mat-grid-list cols="2" rowHeight="75px">
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>NOMBRE MEDICAMENTO:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill">
+          <input matInput #input maxlength="20" autocomplete="off" formControlName="nombreCtrl">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>CÓDIGO COMPRA MEDICAMENTO:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill"  hintLabel="Max 4 caracteres">
+          <input matInput #input maxlength="4" autocomplete="off" formControlName="codigoCompraCtrl">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>CÓDIGO BARRA MEDICAMENTO:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill"  hintLabel="Max 7 caracteres">
+          <input matInput #input maxlength="7" autocomplete="off" formControlName="codigoBarraCtrl">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>CANTIDAD MEDICAMENTO:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill"  hintLabel="Val max 100">
+          <input matInput #input autocomplete="off" formControlName="cantidadCtrl">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>PRECIO MEDICAMENTO:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill"  hintLabel="Val max 10.000">
+          <input matInput #input autocomplete="off" formControlName="precioCtrl">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>LABORATORIO:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill">
+            <mat-select formControlName="laboratorioCtrl">
+                <mat-option value="">Seleccione una opción</mat-option>
+              <mat-option *ngFor="let lab of laboratorios" value={{lab.id}}>
+                {{lab.nombre}}
+            </mat-option>
+            </mat-select>
+          </mat-form-field>  
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-label>DOSIFICACION:</mat-label>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field appearance="fill">
+            <mat-select formControlName="dosificacionCtrl">
+                <mat-option value="">Seleccione una opción</mat-option>
+                <mat-option *ngFor="let dosificacion of dosificaciones" value={{dosificacion.id}}>
+                  {{dosificacion.nombre}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>  
+      </mat-grid-tile>   
+
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <button [disabled]="form.invalid" color="primary" mat-button
+                (click)="confirmModal()" mat-raised-button type="submit">
+          <mat-icon>save</mat-icon>
+          GUARDAR
+        </button>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+</form>
