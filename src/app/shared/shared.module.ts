@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTabsModule } from "@angular/material/tabs";
@@ -10,10 +9,11 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { MatSelectModule } from "@angular/material/select";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { BuscadorDosificacionComponent } from "./components/buscador-dosificacion/buscador-dosificacion.component";
 
 @NgModule({
-	declarations: [],
+	declarations: [BuscadorDosificacionComponent],
 	imports: [
 		CommonModule,
 		MatGridListModule,
@@ -26,7 +26,7 @@ import { MatSelectModule } from "@angular/material/select";
 		MatFormFieldModule,
 		ReactiveFormsModule,
 		MatInputModule,
-		MatSelectModule,
+		MatAutocompleteModule,
 	],
 	exports: [
 		MatGridListModule,
@@ -39,7 +39,9 @@ import { MatSelectModule } from "@angular/material/select";
 		MatFormFieldModule,
 		ReactiveFormsModule,
 		MatInputModule,
-		MatSelectModule,
+		MatAutocompleteModule,
+		BuscadorDosificacionComponent,
 	],
+	providers: [MatAutocompleteModule],
 })
 export class SharedModule {}
